@@ -13,9 +13,9 @@ class Solution(object):
             }
             
         stack = []
-        
+        closedBracket = set(dict.values)
         for i in range(len(s)):
-            if s[i] in dict.values():
+            if s[i] in closedBracket:
                 stack.append(s[i])
             if s[i] in dict.keys():
                 if not stack:

@@ -8,9 +8,7 @@ class Solution(object):
         
         while n != 1:
             digit_char_list = []
-            digit_char_list.extend(str(n))
-            digit_char_list.sort()
-            
+            digit_char_list.extend(str(n))            
             unq_num = "".join(digit_char_list)
             
             if unq_num in visited:

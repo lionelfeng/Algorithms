@@ -11,21 +11,19 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        if not root: return []
-        stack = [root]
+        cur = root
+        stack = []
         result = []
-        while stack:
-            cur = stack[-1]
-            
-            if cur.left and not cur.left in set(result):
-            	cur = cur.left
-            	stack.append(cur)
-            else:
-            	result.append(stack.pop())
-            	if cur.right:
-            		stack.append(cur.right)
 
-        return map(lambda x: x.val, result)
+        # niubi! - rewrote it from Steven's code.
+        while cur or stack:
+        	while cur:
+				stack.append(cur)
+				cur = cur.left
+        	cur = stack.pop()
+        	result.append(cur.val)
+        	cur = cur.right
+        return result
 
 def test1():
 	t0 = TreeNode(0)

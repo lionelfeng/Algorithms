@@ -14,9 +14,9 @@ class Solution(object):
             if unq_num in visited:
                 return False
             visited.add(unq_num)
-            n = sum(map(lambda x: int(x) * int(x), digit_char_list))
+            n = sum(map(lambda x: int(x) ** 2, digit_char_list))
         
         return True
 
 if __name__  == "__main__":
-    print Solution().isHappy(1999)
+    print Solution().isHappy(19)

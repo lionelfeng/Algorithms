@@ -18,10 +18,6 @@ class Solution(object):
         if sum == root.val and not root.left and not root.right:
             return True
         
-        subsum = sum - root.val
-        if root.left and self.hasPathSum(root.left, subsum):
-            return True
-        elif root.right and self.hasPathSum(root.right, subsum):
-            return True
-        else:
-            return False
+        sum -= root.val
+        # Inspired by Steven's code.
+        return self.hasPathSum(root.left, sum) or self.hasPathSum(root.right, sum) 

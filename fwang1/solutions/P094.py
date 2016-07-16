@@ -14,7 +14,7 @@ class Solution(object):
         if not root: return []
         stack = [root]
         result = []
-        while len(stack) != 0:
+        while stack:
             cur = stack[-1]
             
             if cur.left and not cur.left in set(result):
